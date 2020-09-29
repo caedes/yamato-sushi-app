@@ -20,7 +20,7 @@ export default function Header({ title }) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <Avatar
             alt={websiteTitle}
