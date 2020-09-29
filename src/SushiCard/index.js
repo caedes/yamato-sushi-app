@@ -5,15 +5,13 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  IconButton,
-  Input,
   Typography,
 } from "@material-ui/core";
 import { string } from "prop-types";
-import { AddBox, IndeterminateCheckBox } from "@material-ui/icons";
 import { useCounter } from "react-use";
 
 import useStyles from "./styles";
+import QuantityInput from "./QuantityInput";
 
 export default function SushiCard({ image, title, description }) {
   const classes = useStyles();
@@ -30,18 +28,7 @@ export default function SushiCard({ image, title, description }) {
         <Typography variant="body2" color="textSecondary" component="p">
           {description}
         </Typography>
-        <IconButton aria-label="ajouter" onClick={() => inc()}>
-          <AddBox fontSize="inherit" />
-        </IconButton>
-        <Input
-          name="quantity"
-          value={quantity}
-          onChange={(event) => set(event.target.value)}
-          inputProps={{ "aria-label": "quantity" }}
-        />
-        <IconButton aria-label="supprimer" onClick={() => dec()}>
-          <IndeterminateCheckBox fontSize="inherit" />
-        </IconButton>
+        <QuantityInput quantity={quantity} inc={inc} dec={dec} set={set} />
       </CardContent>
       <CardActions disableSpacing>
         <Button size="small">Ajouter</Button>
