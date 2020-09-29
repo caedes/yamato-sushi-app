@@ -10,13 +10,15 @@ import {
   Typography,
 } from "@material-ui/core";
 import { string } from "prop-types";
-
 import { AddBox, IndeterminateCheckBox } from "@material-ui/icons";
+import { useCounter } from "react-use";
 
 import useStyles from "./styles";
 
 export default function SushiCard({ image, title, description }) {
   const classes = useStyles();
+
+  const [quantity, { inc, dec }] = useCounter(1, 10, 1);
 
   return (
     <Card className={classes.root}>
@@ -28,15 +30,15 @@ export default function SushiCard({ image, title, description }) {
         <Typography variant="body2" color="textSecondary" component="p">
           {description}
         </Typography>
-        <IconButton aria-label="delete">
+        <IconButton aria-label="ajouter" onClick={() => inc()}>
           <AddBox fontSize="inherit" />
         </IconButton>
         <Input
           name="quantity"
-          value={1}
+          value={quantity}
           inputProps={{ "aria-label": "quantity" }}
         />
-        <IconButton aria-label="delete">
+        <IconButton aria-label="supprimer" onClick={() => dec()}>
           <IndeterminateCheckBox fontSize="inherit" />
         </IconButton>
       </CardContent>
