@@ -3,14 +3,18 @@ import { IconButton, Input } from "@material-ui/core";
 import { AddBox, IndeterminateCheckBox } from "@material-ui/icons";
 import { func, number } from "prop-types";
 
+function Button({ onClick, label, Icon }) {
+  return (
+    <IconButton aria-label={label} onClick={onClick}>
+      <Icon fontSize="inherit" />
+    </IconButton>
+  );
+}
+
 export default function QuantityInput({ quantity, inc, dec, set }) {
   return (
     <>
-      {inc && (
-        <IconButton aria-label="ajouter" onClick={() => inc()}>
-          <AddBox fontSize="inherit" />
-        </IconButton>
-      )}
+      {inc && <Button onClick={() => inc()} label="Ajouter" Icon={AddBox} />}
       <Input
         name="quantity"
         value={quantity}
@@ -18,9 +22,11 @@ export default function QuantityInput({ quantity, inc, dec, set }) {
         inputProps={{ "aria-label": "quantity" }}
       />
       {dec && (
-        <IconButton aria-label="supprimer" onClick={() => dec()}>
-          <IndeterminateCheckBox fontSize="inherit" />
-        </IconButton>
+        <Button
+          onClick={() => dec()}
+          label="Supprimer"
+          Icon={IndeterminateCheckBox}
+        />
       )}
     </>
   );
