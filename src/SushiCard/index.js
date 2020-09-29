@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import { string } from "prop-types";
 import { useCounter } from "react-use";
+import config from "react-global-configuration";
 
 import useStyles from "./styles";
 import QuantityInput from "./QuantityInput";
@@ -16,7 +17,8 @@ import QuantityInput from "./QuantityInput";
 export default function SushiCard({ image, title, description }) {
   const classes = useStyles();
 
-  const [quantity, { inc, dec, set }] = useCounter(1, 10, 1);
+  const { max, min, defaultValue } = config.get("quantity");
+  const [quantity, { inc, dec, set }] = useCounter(defaultValue, max, min);
 
   return (
     <Card className={classes.root}>
