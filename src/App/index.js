@@ -4,8 +4,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import theme from "./theme";
-import HomeScreen from "../HomeScreen";
-import BasketScreen from "../BasketScreen";
+import routes from "./routes";
 
 export default function App() {
   return (
@@ -13,8 +12,10 @@ export default function App() {
       <CssBaseline />
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={HomeScreen} />
-          <Route exact path="/basket" component={BasketScreen} />
+          {Object.keys(routes).map((routeName) => {
+            const { path, component } = routes[routeName];
+            return <Route exact path={path} component={component} key={path} />;
+          })}
         </Switch>
       </BrowserRouter>
     </ThemeProvider>
