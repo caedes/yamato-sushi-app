@@ -3,43 +3,43 @@
     {
       "id": 1,
       "image": "https://i2.wp.com/www.eatthis.com/wp-content/uploads/2020/07/assorted-sushi.jpg?resize=640%2C360&ssl=1",
-      "title": "Makki",
+      "title": "maki",
       "description": "Ingrédients : poisson, riz"
     },
     {
       "id": 2,
       "image": "https://i2.wp.com/www.eatthis.com/wp-content/uploads/2020/07/assorted-sushi.jpg?resize=640%2C360&ssl=1",
-      "title": "Makki",
+      "title": "temaki",
       "description": "Ingrédients : poisson, riz"
     },
     {
       "id": 3,
       "image": "https://i2.wp.com/www.eatthis.com/wp-content/uploads/2020/07/assorted-sushi.jpg?resize=640%2C360&ssl=1",
-      "title": "Makki",
+      "title": "uramaki",
       "description": "Ingrédients : poisson, riz"
     },
     {
       "id": 4,
       "image": "https://i2.wp.com/www.eatthis.com/wp-content/uploads/2020/07/assorted-sushi.jpg?resize=640%2C360&ssl=1",
-      "title": "",
+      "title": "sashimi",
       "description": "Ingrédients : poisson, riz"
     },
     {
       "id": 5,
       "image": "https://i2.wp.com/www.eatthis.com/wp-content/uploads/2020/07/assorted-sushi.jpg?resize=640%2C360&ssl=1",
-      "title": "",
+      "title": "nigiri",
       "description": "Ingrédients : poisson, riz"
     },
     {
       "id": 6,
       "image": "https://i2.wp.com/www.eatthis.com/wp-content/uploads/2020/07/assorted-sushi.jpg?resize=640%2C360&ssl=1",
-      "title": "",
+      "title": "maki",
       "description": "Ingrédients : poisson, riz"
     },
     {
       "id": 7,
       "image": "https://i2.wp.com/www.eatthis.com/wp-content/uploads/2020/07/assorted-sushi.jpg?resize=640%2C360&ssl=1",
-      "title": "",
+      "title": "uramaki",
       "description": "Ingrédients : poisson, riz"
     }
   ]
