@@ -3,18 +3,17 @@ import { TextField } from "@material-ui/core";
 
 import Screen from "../Screen";
 import SushiCardList from "../SushiCardList";
+import useQueryStringSearch from "../useQueryStringSearch";
 
 export default function HomeScreen() {
-  const [search, setSearch] = React.useState("");
-
-  const handleChange = (event) => setSearch(event.target.value);
+  const [search, setSearch] = useQueryStringSearch();
 
   return (
     <Screen title="Homepage">
       <TextField
         variant="outlined"
         value={search}
-        onChange={handleChange}
+        onChange={setSearch}
         fullWidth
       />
       <SushiCardList search={search} />
