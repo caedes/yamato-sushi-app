@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 import yamotoLogo from "./yamoto-logo.jpg";
 import useStyles from "./styles";
@@ -22,15 +23,22 @@ export default function Header({ title }) {
     <div className={classes.root}>
       <AppBar position="fixed">
         <Toolbar>
-          <Avatar
-            alt={websiteTitle}
-            src={yamotoLogo}
-            className={classes.logo}
-          />
+          <Link to="/">
+            <Avatar
+              alt={websiteTitle}
+              src={yamotoLogo}
+              className={classes.logo}
+            />
+          </Link>
           <Typography variant="h6" className={classes.title}>
             {websiteTitle} - {title}
           </Typography>
-          <IconButton aria-label="show 17 new notifications" color="inherit">
+          <IconButton
+            component={Link}
+            to="/basket"
+            aria-label="show 17 new notifications"
+            color="inherit"
+          >
             <Badge badgeContent={17} color="secondary">
               <ShoppingCart />
             </Badge>

@@ -1,27 +1,22 @@
 import React from "react";
-import { CssBaseline, TextField } from "@material-ui/core";
+import { CssBaseline } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/core/styles";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Header from "../Header";
 import theme from "./theme";
-import SushiCardList from "../SushiCardList";
-import useStyles from "./styles";
+import HomeScreen from "../HomeScreen";
+import BasketScreen from "../BasketScreen";
 
 export default function App() {
-  const classes = useStyles();
-
-  const [search, setSearch] = React.useState("");
-  const handleChange = (event) => setSearch(event.target.value);
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header title="Homepage" />
-      <div className={classes.offset} />
-      <article>
-        <TextField variant="outlined" value={search} onChange={handleChange} />
-        <SushiCardList search={search} />
-      </article>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={HomeScreen} />
+          <Route exact path="/basket" component={BasketScreen} />
+        </Switch>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
