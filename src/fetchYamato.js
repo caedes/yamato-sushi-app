@@ -1,7 +1,7 @@
-const responseToJson = (response) => response.json();
-
-export default function fetchYamato(route) {
+export default async function fetchYamato(route) {
   const baseUri = process.env.REACT_APP_BASE_URI || "//localhost:3001";
+  const response = await fetch(`${baseUri}${route}`);
+  if (!response.ok) throw new Error(response.statusText);
 
-  return fetch(`${baseUri}${route}`).then(responseToJson);
+  return await response.json();
 }

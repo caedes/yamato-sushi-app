@@ -14,7 +14,7 @@ export default function SushiCardList({ search }) {
 
   if (isLoading) return <CircularProgress color="secondary" />;
 
-  if (error) return "Error!";
+  if (error) return "Retry in a moment";
 
   return (
     <Grid container spacing={2} className={classes.wrapper}>
