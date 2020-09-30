@@ -8,7 +8,7 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core";
-import { ShoppingCart } from "@material-ui/icons";
+import { ShoppingCart, Settings } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 import yamotoLogo from "./yamoto-logo.jpg";
@@ -42,6 +42,14 @@ export default function Header({ title }) {
             <Badge badgeContent={17} color="secondary">
               <ShoppingCart />
             </Badge>
+          </IconButton>
+          <IconButton
+            component={Link}
+            to="/settings"
+            aria-label="settings"
+            color="inherit"
+          >
+            <Settings />
           </IconButton>
         </Toolbar>
       </AppBar>

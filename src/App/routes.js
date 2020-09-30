@@ -1,5 +1,6 @@
 import BasketScreen from "../BasketScreen";
 import HomeScreen from "../HomeScreen";
+import SettingsScreen from "../SettingsScreen";
 
 export default {
   home: {
@@ -11,5 +12,10 @@ export default {
     path: "/basket",
     title: "Basket",
     component: BasketScreen,
+  },
+  settings: {
+    path: "/settings",
+    title: "Settings",
+    component: SettingsScreen,
   },
 };
