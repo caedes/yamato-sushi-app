@@ -19,9 +19,9 @@ export default function SushiCardList({ search }) {
   return (
     <Grid container spacing={2} className={classes.wrapper}>
       {isEmpty(sushis) && "Pas de sushis"}
-      {sushis.map(({ id, image, title, description }) => (
-        <Grid item xs={6} md={3} key={id}>
-          <SushiCard image={image} title={title} description={description} />
+      {sushis.map((sushi) => (
+        <Grid item xs={6} md={3} key={sushi.id}>
+          <SushiCard {...sushi} />
         </Grid>
       ))}
     </Grid>
