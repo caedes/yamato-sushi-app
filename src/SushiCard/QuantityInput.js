@@ -20,12 +20,12 @@ export default function QuantityInput({ quantity, inc, dec, set }) {
   return (
     <Grid container>
       <Grid item xs={4}>
-        {inc && (
+        {dec && (
           <Button
-            onClick={() => inc()}
-            label="Ajouter"
-            Icon={AddBox}
-            disabled={!isInc}
+            onClick={() => dec()}
+            label="Supprimer"
+            Icon={IndeterminateCheckBox}
+            disabled={!isDec}
           />
         )}
       </Grid>
@@ -38,12 +38,12 @@ export default function QuantityInput({ quantity, inc, dec, set }) {
         />
       </Grid>
       <Grid item xs={4}>
-        {dec && (
+        {inc && (
           <Button
-            onClick={() => dec()}
-            label="Supprimer"
-            Icon={IndeterminateCheckBox}
-            disabled={!isDec}
+            onClick={() => inc()}
+            label="Ajouter"
+            Icon={AddBox}
+            disabled={!isInc}
           />
         )}
       </Grid>
