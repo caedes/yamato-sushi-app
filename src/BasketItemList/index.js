@@ -1,41 +1,10 @@
-import React from "react";
-import {
-  IconButton,
-  List,
-  ListItem,
-  ListItemSecondaryAction,
-  ListItemText,
-} from "@material-ui/core";
-import { Delete } from "@material-ui/icons";
-import { arrayOf, func, number, shape, string } from "prop-types";
+import { connect } from "react-redux";
 
-export default function BasketItemList({ sushis, removeAt }) {
-  return (
-    <List component="ol" aria-label="basket item list">
-      {sushis.map(({ id, title }, i) => (
-        <ListItem key={id}>
-          <ListItemText primary={title} />
-          <ListItemSecondaryAction>
-            <IconButton
-              edge="end"
-              aria-label="delete"
-              onClick={() => removeAt(i)}
-            >
-              <Delete />
-            </IconButton>
-          </ListItemSecondaryAction>
-        </ListItem>
-      ))}
-    </List>
-  );
-}
+import BasketItemList from "./component";
+import { basketItems } from "../basket/selectors";
 
-BasketItemList.propTypes = {
-  sushis: arrayOf(
-    shape({
-      id: number,
-      title: string,
-    })
-  ),
-  removeAt: func,
-};
+const mapStateToProps = (state) => ({
+  sushis: basketItems(state.basket, state.sushis),
+});
+
+export default connect(mapStateToProps)(BasketItemList);

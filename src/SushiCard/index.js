@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
 import SushiCard from "./component";
-import { addToBasket } from "../addToBasket/actions";
+import { addToBasket } from "../basket/actions";
 
 const mapDispatchToProps = { addToBasket };
 
